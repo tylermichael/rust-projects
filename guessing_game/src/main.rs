@@ -3,7 +3,7 @@ use std::io::stdin;
 
 use rand::Rng;
 
-fn main()-> Result<(), ()>{
+fn main() {
     let num: i32 = rand::thread_rng().gen_range(1..=100);
 
     println!("The random number is: {num}");
@@ -17,10 +17,10 @@ fn main()-> Result<(), ()>{
         match num.cmp(&guess) {
             Ordering::Equal => {
                 println!("You guessed correctly!");
-                return Ok(())
-            },
+                break
+            }
             Ordering::Greater => println!("The number is greater"),
-            Ordering::Less => println!("The number is lower")
+            Ordering::Less => println!("The number is lower"),
         }
     }
 }
