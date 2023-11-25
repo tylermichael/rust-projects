@@ -26,8 +26,8 @@ where
                 writeln!(&mut writer, "You guessed correctly!")?;
                 return Ok(());
             }
-            Ordering::Greater => writeln!(&mut writer, "The number is greater")?,
-            Ordering::Less => writeln!(&mut writer, "The number is lower")?,
+            Ordering::Greater => writeln!(&mut writer, "The number is higher.")?,
+            Ordering::Less => writeln!(&mut writer, "The number is lower.")?,
         }
     }
 }

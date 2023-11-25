@@ -3,8 +3,8 @@ on:
   pull_request:
     branches: main
     paths:
-      - guessing_game/*
-
+      - guessing_game
+      - .github/workflows/guessing-game.yaml
 
 jobs:
   test:
@@ -13,5 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
-      - run: cd guessing_game
-      - run: cargo test --all-features
+      - name: Run tests
+        run: |
+          cd guessing_game
+          cargo test --all-features
