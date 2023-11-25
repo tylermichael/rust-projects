@@ -13,5 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
-      - run: cd guessing_game
-      - run: cargo test --all-features
+      - run: |
+          cd guessing_game
+          cargo test --all-features
