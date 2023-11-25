@@ -1,0 +1,17 @@
+name: guessing game tests
+on:
+  pull_request:
+    branches: main
+    paths:
+      - guessing_game/*
+
+
+jobs:
+  test:
+    name: cargo test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cd guessing_game
+      - run: cargo test --all-features
